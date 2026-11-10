@@ -1,15 +1,6 @@
 """
 servidor.py
 PFO 3 - Servidor TCP concurrente con pool de workers.
-
-Evolución del PFO 2: en lugar de una API Flask monolítica que atiende cada
-petición dentro del mismo proceso que accede a SQLite, el servidor solo
-recibe tareas por socket y las delega a un pool de hilos mediante una cola.
-
-Modelo Productor-Consumidor:
-    - Productores: hilos de conexión (uno por cliente) que leen el socket
-      y encolan tareas.
-    - Consumidores: hilos worker que extraen tareas de la cola y las procesan.
 """
 
 import queue
